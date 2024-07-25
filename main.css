@@ -521,6 +521,9 @@ header {
     color: white;
     text-align: center;
     padding: 1em;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 header h1 {
@@ -556,7 +559,7 @@ img {
     max-width: 300px;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 50%;
 }
 
@@ -876,7 +879,7 @@ footer p {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .profile img {
-        max-width: 200px;
+        max-width: 150px;
     }
 
     .section-title h2 {
@@ -892,7 +895,7 @@ footer p {
     }
 
     .profile img {
-        max-width: 150px;
+        max-width: 100px;
     }
 
     .section-title h2 {
@@ -911,3 +914,129 @@ footer p {
     }
 }
 
+/* Specific Styles for Practice Site 4 */
+
+/* Step Two: Global Modifications */
+header {
+    height: 60px;
+    line-height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer {
+    height: 40px;
+    line-height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#wrapper {
+    margin-top: 60px; /* Same height as header */
+    margin-bottom: 40px; /* Same height as footer */
+}
+
+/* Step Three: Fixed Position Layout on one.html */
+#one-wrapper {
+    position: relative;
+}
+
+#one-aside {
+    position: absolute;
+    left: 0;
+    width: 25%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+
+#one-article {
+    position: absolute;
+    left: 25%;
+    width: 75%;
+    padding: 10px;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+/* Step Four: Floating Position Layout for two.html */
+#two-aside {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#two-article {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+#two-footer {
+    clear: both;
+}
+
+/* clearfix hack */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Step Five: Responsive Layout for three.html */
+@media screen and (min-width: 768px) {
+    #three-aside {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        background-color: #f0f0f0;
+    }
+
+    #three-article {
+        float: left;
+        width: 75%;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #three-aside, #three-article {
+        width: 100%;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+}
+
+/* Step Six: Inline-Block Layout for four.html */
+#four-aside, #four-article {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 1%;
+}
+
+/* Step Seven: Inline-Block Photo Gallery for five.html */
+#gallery {
+    text-align: center;
+}
+
+#gallery img {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+}
+
+#gallery img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
