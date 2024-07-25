@@ -1,24 +1,25 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
-    background-color: #333;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
 }
 
-nav li {
+nav ul li {
     float: left;
 }
 
-nav a {
+nav ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -26,73 +27,81 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover {
+nav ul li a:hover {
     background-color: #111;
 }
 
-/* Header Styles */
 header {
-    background-color: #4CAF50;
+    background-color: #007BFF;
     color: white;
     text-align: center;
-    padding: 1em;
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 header h1 {
     margin: 0;
 }
 
-/* Main Content Styles */
-main {
-    padding: 20px;
-}
-
-/* Section Styles */
-section {
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Image Styles */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Footer Styles */
-footer {
+.profile {
+    margin-top: 100px; /* Adjust for fixed header */
     text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 2em 0;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #007BFF;
     color: white;
+    text-align: center;
+    padding: 1em 0;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-/* Emphasis Styles */
-em, strong, b, i {
-    color: #d9534f;
+section {
+    padding: 2em;
 }
 
-/* Article and Aside Styles */
-article, aside {
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #e7e7e7;
-    border-left: 5px solid #ccc;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-article {
-    border-left-color: #4CAF50;
+.gallery figure {
+    margin: 0;
+    padding: 0;
+    width: calc(33.333% - 20px);
 }
 
-aside {
-    border-left-color: #007BFF;
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .gallery figure {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery figure {
+        width: 100%;
+    }
 }
