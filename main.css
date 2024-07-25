@@ -521,6 +521,12 @@ header {
     color: white;
     text-align: center;
     padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header h1 {
@@ -530,6 +536,7 @@ header h1 {
 /* Main Content Styles */
 main {
     padding: 20px;
+    margin-top: 60px; /* Adjust this to the height of your header */
 }
 
 /* Section Styles */
@@ -557,17 +564,23 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #343a40;
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Emphasis Styles */
@@ -840,6 +853,8 @@ footer {
     text-align: center;
     padding: 20px 0;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
@@ -910,22 +925,79 @@ footer p {
     }
 }
 
-/* Travel Blog Gallery */
-.gallery {
+/* Travel Blog Styles */
+.travel-blog .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
-    padding: 20px;
 }
 
-.gallery img {
-    width: calc(33% - 20px);
+.travel-blog .image-gallery img {
+    max-width: 30%;
+    border-radius: 8px;
     object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    object-position: center;
+    transition: transform 0.3s ease;
 }
 
-.gallery img:hover {
+.travel-blog .image-gallery img:hover {
     transform: scale(1.05);
 }
+
+/* Fix for Footer Issue */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Fix for Navigation Issue */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #111;
+}
+
+/* Main content padding to account for fixed navigation */
+main {
+    padding-top: 60px;
+}
+
+/* Header height adjustment */
+header {
+    height: 60px;
+}
+
+/* Adjusting footer bottom positioning */
+body {
+    padding-bottom: 60px; /* height of the footer */
+}
+
+/* Additional style for sections */
+section {
+    margin-top: 60px; /* Adjust for fixed header */
+}
+
