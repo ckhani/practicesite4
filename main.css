@@ -553,10 +553,11 @@ img {
 
 /* Profile Image Styles */
 .profile-image {
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 /* Footer Styles */
@@ -744,7 +745,7 @@ aside {
 }
 
 .profile img {
-    max-width: 150px;
+    max-width: 300px;
     border-radius: 50%;
 }
 
@@ -875,7 +876,7 @@ footer p {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .profile img {
-        max-width: 100px;
+        max-width: 200px;
     }
 
     .section-title h2 {
@@ -891,7 +892,7 @@ footer p {
     }
 
     .profile img {
-        max-width: 75px;
+        max-width: 150px;
     }
 
     .section-title h2 {
