@@ -521,11 +521,6 @@ header {
     color: white;
     text-align: center;
     padding: 1em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 header h1 {
@@ -562,7 +557,6 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 50%;
 }
 
 /* Footer Styles */
@@ -574,7 +568,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1000;
 }
 
 /* Emphasis Styles */
@@ -747,7 +740,7 @@ aside {
 /* Custom Styles */
 .profile {
     text-align: center;
-    margin: 4em 0;
+    margin: 2em 0;
 }
 
 .profile img {
@@ -917,25 +910,22 @@ footer p {
     }
 }
 
-/* Travel Blog Image Gallery */
+/* Travel Blog Gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
 }
 
 .gallery img {
+    width: calc(33% - 20px);
     object-fit: cover;
-    object-position: center;
-    width: calc(100% / 3 - 20px);
-    height: auto;
     border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
 }
-
